@@ -1,0 +1,14 @@
+
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  input {
+    height: 20px;
+    width: 20px;
+  }
+
+  .spanView {
+    margin: 0 10px;
+  }
+}
