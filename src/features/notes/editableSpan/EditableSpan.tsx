@@ -27,8 +27,8 @@ export const EditableSpan = ({ note }: EditableSpanPropsType) => {
   const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
-  const closeEditMode = () => {
-    setEditMode(false);
+  const closeEditMode = (id: string) => {
+    editNote(id);
   };
   return (
     <>
@@ -46,7 +46,7 @@ export const EditableSpan = ({ note }: EditableSpanPropsType) => {
             onChange={onChangeHandler}
             autoFocus
             value={text}
-            onBlur={closeEditMode}
+            onBlur={() => closeEditMode(note.id)}
           />
           <button onClick={() => editNote(note.id)} className={s.btn}>
             <span className="material-symbols-outlined">add</span>
